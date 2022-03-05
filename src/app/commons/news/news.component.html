@@ -1,0 +1,18 @@
+<p>news works!</p>
+<p>{{ msg }}</p>
+<p>{{ user }}</p>
+<span [innerHtml]="ht" [title]="seeSee"></span>
+<button (click)="showMe()">显示/隐藏</button>
+<p *ngIf="flag">哈哈哈哈{{ flag }}</p>
+<p *ngIf="!flag">不显示咯{{ flag }}</p>
+<p *ngFor="let item of userArr">{{ item.name }}</p>
+<span>{{ userInfo.name }}</span>
+<p>管道时间{{ date | date: 'yyyy-MM-dd : HH:mm:ss' }}</p>
+<form (submit)="inputSubmit($event)">
+  <input type="text" (input)="setValue($event)">
+  <button (submit)="inputSubmit($event)">提交</button>
+</form>
+
+<input type="text" [(ngModel)]="numbers">
+<button (click)="numbers=numbers+1">+1查看双向绑定{{numbers}}</button>
+<app-sons [msg]="numbers" #appSons>
